@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" />
+    <link href="css/form.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="body">
+    <form class="form js-form">
+        <fieldset class="form__fieldset">
+            <legend class="form__legend">Kalkulator walut</legend>
+            <p>
+                <label class="form__label">
+                    <span class="form__labelText">Przelicz z PLN*</span>
+                    <input class="form__field js-field" type="number" step="any" min="1" autofocus required
+                        placeholder="Wpisz kwotę w złotówkach">
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span class="form__labelText">Wybierz walutę*:</span>
+                    <select class="form__field js-currency" name="currency" required>
+                        <option value="">Wybierz walutę</option>
+                        <option value="EUR">Euro</option>
+                        <option value="GBP">Funt Brytyjski</option>
+                        <option value="USD">Dolar Amerykański</option>
+                    </select>
+                </label>
+            </p>
+            <button class="form__button js-submitButton">Przelicz</button>
+            <p class="form__result js-result"></p>
+            <button class="form__button js-resetButton" type="reset">Resetuj</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
