@@ -21,25 +21,27 @@ formElement.addEventListener("submit", (event) => {
 
     switch (currency) {
         case "EUR":
+            currencyName= "Euro"
             result = (plnAmount / rateEUR).toFixed(2);
-            resultElement.innerText = `${sentence} ${result} euro`;
             break;
 
         case "GBP":
+            currencyName="Funtów"
             result = (plnAmount / rateGBP).toFixed(2);
-            resultElement.innerText = `${sentence} ${result} funtów`;
             break;
 
         case "USD":
+             currencyName="Dolarów"
             result = (plnAmount / rateUSD).toFixed(2);
-            resultElement.innerText = `${sentence} ${result} dolarów`;
             break;
         default:
             resultElement.innerText = "Przepraszamy, coś poszło nie tak";
-    }
+    };
+
+    resultElement.innerText = `${sentence} ${result} ${currencyName}`;
 
     formElement.addEventListener("reset", () => {
         resultElement.innerText = "";
-        console.log("formularz został zresetowany")
-    })
+        console.log("formularz został zresetowany");
+    });
 })
