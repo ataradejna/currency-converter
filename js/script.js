@@ -1,11 +1,11 @@
-console.log("Cześć")
+console.log("Cześć wszystkim")
 
 let formElement = document.querySelector(".js-form");
 let fieldElement = document.querySelector(".js-field");
 let currencyElement = document.querySelector(".js-currency");
 let submitButton = document.querySelector(".js-submitButton");
 let resultElement = document.querySelector(".js-result");
-let resetButton = document.querySelector("js-resetButton");
+let resetButton = document.querySelector(".js-resetButton");
 
 formElement.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -18,6 +18,7 @@ formElement.addEventListener("submit", (event) => {
     let currency = currencyElement.value;
 
     let sentence = "Otrzymasz";
+    let currencyName;
 
     switch (currency) {
         case "EUR":
