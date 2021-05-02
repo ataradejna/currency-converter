@@ -1,48 +1,63 @@
-console.log("Cześć wszystkim")
-
-let formElement = document.querySelector(".js-form");
-let fieldElement = document.querySelector(".js-field");
-let currencyElement = document.querySelector(".js-currency");
-let submitButton = document.querySelector(".js-submitButton");
-let resultElement = document.querySelector(".js-result");
-let resetButton = document.querySelector(".js-resetButton");
-
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    let rateEUR = 4.56;
-    let rateGBP = 5.22;
-    let rateUSD = 3.77;
-
-    let plnAmount = +fieldElement.value;
-    let currency = currencyElement.value;
-
-    let sentence = "Otrzymasz";
-    let currencyName;
-
-    switch (currency) {
-        case "EUR":
-            currencyName= "Euro"
-            result = (plnAmount / rateEUR).toFixed(2);
-            break;
-
-        case "GBP":
-            currencyName="Funtów"
-            result = (plnAmount / rateGBP).toFixed(2);
-            break;
-
-        case "USD":
-             currencyName="Dolarów"
-            result = (plnAmount / rateUSD).toFixed(2);
-            break;
-        default:
-            resultElement.innerText = "Przepraszamy, coś poszło nie tak";
+{
+    const welcome = () => {
+        console.log("Cześć wszystkim");
     };
 
-    resultElement.innerText = `${sentence} ${result} ${currencyName}`;
+    const resultElement = document.querySelector(".js-result");
 
-    formElement.addEventListener("reset", () => {
-        resultElement.innerText = "";
-        console.log("formularz został zresetowany");
-    });
-})
+    const calculateResult = (amount, currency) => {
+        const rateEUR = 4.56;
+        const rateGBP = 5.22;
+        const rateUSD = 3.77;
+
+        switch (currency) {
+            case "EUR":
+                currencyName = "Euro";
+                return amount / rateEUR;
+
+            case "GBP":
+                currencyName = "Funtów";
+                return amount / rateGBP;
+
+
+            case "USD":
+                currencyName = "Dolarów";
+                return amount / rateUSD;
+
+            default:
+                resultElement.innerText = "Przepraszamy,coś poszło nie tak";
+        };
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const amountElement = document.querySelector(".js-amount");
+        const currencyELement = document.querySelector(".js-currency");
+
+        const currency = currencyELement.value;
+        const amount = +amountElement.value;
+
+        let result = calculateResult(amount, currency);
+        const sentence = "Otrzymasz";
+
+        resultElement.innerText = `${sentence} ${result.toFixed(2)} ${currencyName}`;
+    };
+
+    const onFormReset = () => {
+        resultElement.innerText = ""
+        console.log("Formularz został zresetowany");
+
+    };
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+        formElement.addEventListener("submit", onFormSubmit);
+        formElement.addEventListener("reset", onFormReset);
+       
+    };
+
+    welcome();
+    init();
+
+}
