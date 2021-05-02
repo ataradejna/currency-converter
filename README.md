@@ -8,15 +8,15 @@
 - [Usage](#usage)
 
 ## Info
-This is a simple currency converter. 
+This is a simple currency converter. You can use it to convert PLN to Euro, Pound and Dollar.
 
-![Currency converter preview](https://i.ibb.co/RD7WXz9/Screenshot-2021-04-28-at-20-48-20.png)
+![Currency converter preview](https://i.ibb.co/YkqSfTh/Screenshot-2021-05-02-at-13-03-24.png)
 
 ## Used technologies 
 - Semantic HTML
 - CSS
 - BEM
-- ES6 features
+- ES6+ features
 
 ## Usage 
 1. Type a chosen amount in PLN 
