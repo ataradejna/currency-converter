@@ -3,8 +3,6 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 15px;
-    box-shadow: rgba(0, 0, 0, 0.089) 10px 15px 20px 15px;
-    border-radius: 10px;
 }
 
 .form__fieldset {
@@ -18,7 +16,7 @@
     border-radius: 10px;
     padding: 15px;
     color: ivory;
-    font-size: large;
+    font-weight: 600;
 }
 
 .form__labelText {
@@ -43,7 +41,7 @@
     border: none;
     padding: 10px;
     margin-top: 20px;
-    font-size: larger;
+    font-weight: bold;
 }
 
 .form__result {
